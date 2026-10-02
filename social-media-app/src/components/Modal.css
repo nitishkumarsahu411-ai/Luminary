@@ -1,0 +1,157 @@
+/* Modal.css — Shared modal styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  padding: var(--space-md);
+  animation: fadeIn var(--transition-fast);
+}
+
+.modal-box {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border-strong);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  animation: scaleIn var(--transition-fast);
+}
+
+.modal-box--narrow {
+  max-width: 420px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) var(--space-xl);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.modal-close-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--clr-surface-2);
+  color: var(--clr-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  transition: all var(--transition-fast);
+}
+.modal-close-btn:hover {
+  background: var(--clr-surface-3);
+  color: var(--clr-text);
+}
+
+.modal-form {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.modal-body {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  padding: var(--space-lg) var(--space-xl);
+  border-top: 1px solid var(--clr-border);
+}
+
+/* Delete modal specific */
+.delete-icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.delete-message {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--clr-text);
+}
+
+.delete-sub-message {
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+}
+
+.delete-post-preview {
+  width: 100%;
+  max-height: 160px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  margin-top: var(--space-sm);
+}
+
+.delete-post-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+/* Edit modal specific */
+.edit-image-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.edit-image-preview-wrap {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.edit-image-preview {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.edit-image-change-btn {
+  position: absolute;
+  bottom: var(--space-sm);
+  right: var(--space-sm);
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background var(--transition-fast);
+}
+.edit-image-change-btn:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+.delete-confirm-group {
+  width: 100%;
+  text-align: left;
+}

@@ -1,0 +1,93 @@
+/* UserMenu.css */
+.user-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 220px;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: scaleIn var(--transition-fast) ease;
+  transform-origin: top right;
+  z-index: 200;
+}
+
+.user-menu-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--clr-surface-2);
+}
+
+.user-menu-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.user-menu-avatar-initials {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.user-menu-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--clr-text);
+}
+
+.user-menu-username {
+  font-size: 0.78rem;
+  color: var(--clr-text-muted);
+}
+
+.user-menu-divider {
+  height: 1px;
+  background: var(--clr-border);
+  margin: 0;
+}
+
+.user-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: 10px 16px;
+  color: var(--clr-text);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-align: left;
+  transition: background var(--transition-fast);
+  text-decoration: none;
+}
+
+.user-menu-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--clr-text-muted);
+}
+
+.user-menu-item:hover {
+  background: var(--clr-surface-2);
+}
+
+.user-menu-logout {
+  color: var(--clr-error);
+}
+.user-menu-logout svg {
+  color: var(--clr-error);
+}

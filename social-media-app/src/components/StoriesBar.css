@@ -1,0 +1,146 @@
+/* StoriesBar.css */
+.stories-bar-container {
+  width: 100%;
+  background: var(--clr-card-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 14px 12px 10px;
+  margin-bottom: var(--space-lg);
+  overflow: hidden;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.stories-reel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 4px;
+}
+
+.story-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 68px;
+  transition: transform var(--transition-fast);
+  outline: none;
+}
+
+.story-item:hover {
+  transform: translateY(-2px);
+}
+
+.story-ring-wrap {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5px;
+}
+
+/* Instagram-style gradient ring for unseen stories */
+.story-item.unseen .story-ring-wrap {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  box-shadow: 0 2px 8px rgba(220, 39, 67, 0.25);
+}
+
+/* Subtle ring for seen stories */
+.story-item.seen .story-ring-wrap {
+  background: var(--clr-border);
+}
+
+.story-avatar-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--clr-card-bg);
+  overflow: hidden;
+  background: var(--clr-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-avatar-fallback {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--clr-text-muted);
+}
+
+/* Your Story wrap */
+.your-story-wrap {
+  background: transparent;
+  border: 1px dashed var(--clr-border-strong);
+}
+
+.story-add-badge {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--clr-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 2px solid var(--clr-card-bg);
+  line-height: 1;
+}
+
+.story-username {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--clr-text);
+  max-width: 66px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+/* Skeletons */
+.stories-skeleton-row {
+  display: flex;
+  gap: 16px;
+}
+
+.story-skeleton-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 68px;
+}
+
+.story-skeleton-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--clr-surface-2);
+  animation: pulseGlow 1.5s infinite;
+}
+
+.story-skeleton-text {
+  width: 44px;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--clr-surface-2);
+}

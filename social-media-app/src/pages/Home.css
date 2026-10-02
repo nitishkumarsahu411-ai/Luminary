@@ -1,0 +1,259 @@
+/* Home.css — Instagram-style Feed Layout */
+.home-page {
+  min-height: 100vh;
+  padding-top: calc(var(--navbar-height) + 24px);
+  padding-bottom: var(--space-3xl);
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  background: var(--clr-bg);
+  transition: background-color var(--transition-normal);
+}
+
+.home-container {
+  max-width: 935px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+/* Feed Column */
+.home-feed-col {
+  width: 100%;
+  max-width: var(--feed-max-width);
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Empty State */
+.feed-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl) var(--space-lg);
+  background: var(--clr-card-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  gap: var(--space-md);
+}
+
+.feed-empty-icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.feed-empty-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clr-text);
+}
+
+.feed-empty-sub {
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+  max-width: 320px;
+}
+
+/* Desktop Right Sidebar (Suggested accounts) */
+.home-sidebar-right {
+  display: none;
+  width: 320px;
+  flex-shrink: 0;
+  padding-top: 10px;
+}
+
+@media (min-width: 992px) {
+  .home-sidebar-right {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+.sidebar-me-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+}
+
+.sidebar-me-avatar-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--clr-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar-me-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar-me-initials {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--clr-text-muted);
+}
+
+.sidebar-me-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-me-username {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--clr-text);
+}
+
+.sidebar-me-username:hover {
+  text-decoration: underline;
+}
+
+.sidebar-me-name {
+  font-size: 0.8rem;
+  color: var(--clr-text-muted);
+}
+
+.sidebar-switch-btn {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--clr-primary);
+}
+
+.sidebar-switch-btn:hover {
+  text-decoration: underline;
+}
+
+/* Suggestions Box */
+.sidebar-suggestions-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--clr-text-muted);
+}
+
+.suggestions-see-all {
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: var(--clr-text);
+}
+
+.sidebar-suggestions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-suggested-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.suggested-avatar-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--clr-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.suggested-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.suggested-avatar-fallback {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--clr-text-muted);
+}
+
+.suggested-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.suggested-username {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--clr-text);
+}
+
+.suggested-username:hover {
+  text-decoration: underline;
+}
+
+.suggested-sub {
+  font-size: 0.72rem;
+  color: var(--clr-text-faint);
+}
+
+.suggested-follow-btn {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  background: transparent;
+  cursor: pointer;
+  padding: 4px 6px;
+  transition: color var(--transition-fast);
+}
+
+.suggested-follow-btn:hover {
+  color: var(--clr-primary-dark);
+}
+
+.suggested-follow-btn.following {
+  color: var(--clr-text-muted);
+  font-weight: 600;
+}
+
+.sidebar-footer {
+  margin-top: 16px;
+  font-size: 0.72rem;
+  color: var(--clr-text-faint);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 640px) {
+  .home-page {
+    padding-top: calc(var(--navbar-height) + 12px);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .stories-bar-container {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .post-card {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}

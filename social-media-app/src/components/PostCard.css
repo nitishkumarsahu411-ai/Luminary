@@ -1,0 +1,270 @@
+/* PostCard.css — Instagram-style Post Card */
+.post-card {
+  background: var(--clr-card-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card-hidden {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--clr-text-muted);
+  font-size: 0.875rem;
+}
+
+/* Header */
+.post-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+.post-card-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.post-card-avatar-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--clr-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.post-card-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-card-avatar-fallback {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--clr-text-muted);
+}
+
+.post-card-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card-username-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.post-card-username {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--clr-text);
+  line-height: 1.2;
+}
+
+.post-card-username:hover {
+  text-decoration: underline;
+}
+
+.post-dot-separator {
+  color: var(--clr-text-faint);
+  font-size: 0.75rem;
+}
+
+.post-card-time {
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+}
+
+/* Three-dot menu */
+.post-card-menu {
+  position: relative;
+}
+
+.post-card-menu-btn {
+  color: var(--clr-text);
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transition-fast);
+}
+
+.post-card-menu-btn:hover {
+  opacity: 0.6;
+}
+
+.post-card-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 170px;
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  z-index: 50;
+  animation: fadeIn 0.15s ease;
+}
+
+.post-card-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--clr-text);
+  transition: background var(--transition-fast);
+}
+
+.post-card-dropdown-item:hover {
+  background: var(--clr-surface-3);
+}
+
+.post-card-dropdown-item.danger {
+  color: var(--clr-danger);
+}
+
+/* Image Wrap */
+.post-card-image-wrap {
+  position: relative;
+  width: 100%;
+  background: var(--clr-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.post-card-image {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Double-click Heart burst */
+.heart-burst-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.heart-burst-icon {
+  width: 90px;
+  height: 90px;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.45));
+  animation: heartPop 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Actions Row */
+.post-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px 6px;
+}
+
+.action-buttons-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.action-btn {
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.action-btn:hover {
+  opacity: 0.65;
+  transform: scale(1.08);
+}
+
+.action-btn:active {
+  transform: scale(0.92);
+}
+
+.like-btn.liked svg {
+  animation: heartPop 0.3s ease;
+}
+
+/* Likes Row */
+.post-card-likes {
+  padding: 0 16px 4px;
+}
+
+.likes-count-text {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--clr-text);
+}
+
+/* Caption */
+.post-card-caption {
+  padding: 2px 16px 6px;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.post-card-caption-username {
+  font-weight: 700;
+  color: var(--clr-text);
+  margin-right: 6px;
+  text-decoration: none;
+}
+
+.post-card-caption-username:hover {
+  text-decoration: underline;
+}
+
+.caption-text-content {
+  color: var(--clr-text);
+  word-break: break-word;
+}
+
+/* Comments preview button */
+.post-view-comments-btn {
+  padding: 2px 16px 14px;
+  text-align: left;
+  font-size: 0.825rem;
+  color: var(--clr-text-muted);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.post-view-comments-btn:hover {
+  color: var(--clr-text);
+}
+
+.post-view-comments-btn.add-first-comment {
+  color: var(--clr-text-faint);
+}
